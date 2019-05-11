@@ -1,0 +1,20 @@
+{% extends 'booking/control-panel/base.html' %}
+
+{% block title %}
+    Control Panel
+{% endblock %}
+
+{% block heading %}
+    <h1 class="h2">Dashboard</h1>
+{% endblock %}
+
+{% block content %}
+    {% include 'booking/control-panel/includes/restaurants_list_template.html' %}
+    {% include 'booking/control-panel/includes/tables_list_template.html' %}
+{% endblock %}
+
+{% block menu_reserved %}
+    {% for menu_restaurant in menu_reserved %}
+    <li><a href="{{ menu_restaurant.get_reserved_url }}"><i class="far fa-list-alt"></i>{{ menu_restaurant.title }}</a></li>
+    {% endfor %}
+{% endblock %}

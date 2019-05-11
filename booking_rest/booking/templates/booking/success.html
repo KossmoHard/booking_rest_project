@@ -1,0 +1,44 @@
+{% extends 'booking/base_booking.html' %}
+
+{% block title %}
+    Successful reservation
+{% endblock %}
+
+{% block content %}
+<div class="col-sm-12">
+    <div class="card text-center">
+        <div class="card-header">
+            You have successfully reserved a table
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Thanks for booking!</h5>
+            <p class="card-text">We will contact you for further details.</p>
+            <!--<h5 class="card-title">Reservation details</h5>-->
+            <!--<table class="table table-bordered table-info-success" style="width:50%">-->
+                <!--<tbody>-->
+                <!--<tr>-->
+                    <!--<td>Restaurant:</td>-->
+                    <!--<td>{{ object.title }}</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td>City:</td>-->
+                    <!--<td>{{ object.city }}</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td>Table:</td>-->
+                    <!--<td>{{ object.tables.title }}</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td>Number seats:</td>-->
+                    <!--<td>Otto</td>-->
+                <!--</tr>-->
+                <!--</tbody>-->
+            <!--</table>-->
+            <a href="{% url 'restaurants_list_url' %}" class="btn btn-primary">Go to Main page</a>
+        </div>
+        <div class="card-footer text-muted">
+            ----- Booking -----
+        </div>
+    </div>
+</div>
+{% endblock %}

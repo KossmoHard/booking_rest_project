@@ -1,0 +1,40 @@
+h2{
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+.info-restaurant p span{
+    color: #383838;
+    font-weight: 500;
+}
+.table-info-success{
+    width: 50%;
+    margin: 20px auto;
+    text-align: left;
+}
+.image-detail{
+    margin: 10px 20px;
+    text-align: center;
+    height: 390px;
+    overflow: hidden;
+}
+.image-detail img{
+    max-width: 100%;
+    height: auto;
+}
+
+.card-home p{
+    margin-bottom: 0px;
+    padding: 10px 0px;
+    border-bottom: 1px solid #ddd;
+}
+.card-home p span{
+    float: right;
+}
+.card-img-block{
+    height: 200px;
+    overflow: hidden
+}
+.card-img-block img{
+    max-width: 100%;
+    height: auto;
+}

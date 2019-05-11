@@ -1,0 +1,35 @@
+<h2>Reserved Tables</h2>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>Title</th>
+            <th>Start working time</th>
+            <th>End working time</th>
+            <th>Date publication</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for reserved_tables in object_list %}
+                <tr>
+                    <td>{{ reserved_tables.pk }}</td>
+                    <td>{{ reserved_tables.name }}</td>
+                    <td>{{ reserved_tables.phone }}</td>
+                    <td>{{ reserved_tables.date }}</td>
+                    <td>{{ reserved_tables.time }}</td>
+                    <td>{{ reserved_tables.tables }}</td>
+                    <td>{{ reserved_tables.restaurant }}</td>
+                    <td class="edit">
+                        <a href="{{ restaurant.get_absolute_url }}"><i class="far fa-eye"></i></a>
+                        <a href="{{ restaurant.get_update_url }}"><i class="fas fa-edit"></i></a>
+                        <a href="{{ restaurant.get_delete_url }}"><i class="far fa-trash-alt"></i></a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

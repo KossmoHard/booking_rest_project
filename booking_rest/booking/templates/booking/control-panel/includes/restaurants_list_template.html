@@ -1,0 +1,31 @@
+<h2>Restaurants</h2>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>Title</th>
+            <th>Start working time</th>
+            <th>End working time</th>
+            <th>Date publication</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for restaurant in object_list %}
+                <tr>
+                    <td>{{ restaurant.pk }}</td>
+                    <td>{{ restaurant.title }}</td>
+                    <td>{{ restaurant.start_working_time }}</td>
+                    <td>{{ restaurant.end_working_time }}</td>
+                    <td>{{ restaurant.data_pub }}</td>
+                    <td class="edit">
+                        <a href="{{ restaurant.get_absolute_url }}"><i class="far fa-eye"></i></a>
+                        <a href="{{ restaurant.get_update_url }}"><i class="fas fa-edit"></i></a>
+                        <a href="{{ restaurant.get_delete_url }}"><i class="far fa-trash-alt"></i></a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

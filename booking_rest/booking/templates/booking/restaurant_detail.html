@@ -1,0 +1,49 @@
+{% extends 'booking/base_booking.html' %}
+
+{% block title %}
+    {{ object.title }} - Restaurant detail
+{% endblock %}
+
+{% block content %}
+<div class="col-sm-8">
+    <div class="card">
+        <div class="card-header"><h2>{{ object.title }}</h2></div>
+        {% if object.image %}
+        <div class="image-detail">
+                <img src="{{ object.image.url }}" alt="" title="">
+        </div>
+        {% endif %}
+        <div class="card-body text-secondary">
+            <div class="info-restaurant">
+                <p><span>Working hours:</span> {{ object.start_working_time }} - {{ object.end_working_time }}</p>
+                <p><span>City:</span> {{ object.city }}</p>
+                <p><span>Phone:</span> {{ object.user.phone_number }}</p>
+            </div>
+            <p>{% autoescape off %}{{ object.description }} {% endautoescape %}</p>
+        </div>
+    </div>
+</div>
+<div class="col-sm-4">
+    <div class="card">
+        <h5 class="card-header">Reservation</h5>
+        <div class="card-body">
+            <form action="{{ object.get_absolute_url }}" method="post">
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="form-group">
+                        {{ field.label }}
+                        {{ field }}
+
+                        {% if field.errors %}
+                            <div class="alert alert-danger">
+                                {{ field.errors }}
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

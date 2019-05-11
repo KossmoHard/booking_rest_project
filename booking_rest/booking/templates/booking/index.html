@@ -1,0 +1,38 @@
+{% extends 'booking/base_booking.html' %}
+
+{% block title %}
+    Restaurant List
+{% endblock %}
+
+{% block content %}
+<div class="col-sm-12">
+    <div class="card-deck">
+        {% for restaurant in object_list %}
+        <div class="col-sm-4">
+            <div class="card" style="margin: 15px 0px;">
+                {% if restaurant.image %}
+                    <div class="card-img-block">
+                        <img class="card-img-top" src="{{ restaurant.image.url }}" alt="{{ restaurant.title }}">
+                    </div>
+                {% endif %}
+                <div class="card-body card-home">
+                    <h5 class="card-title">{{ restaurant.title }}</h5>
+                    <p>City:
+                        <span>{{ restaurant.city }}</span>
+                    </p>
+                    <p>Working hours:
+                        <span>{{ restaurant.start_working_time }} - {{ restaurant.end_working_time }}</span>
+                    </p>
+                    <p>Date of publication:
+                        <span>{{ restaurant.data_pub }}</span>
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href = "{{ restaurant.get_absolute_url }}" class = "btn btn-success">Read more</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

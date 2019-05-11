@@ -1,0 +1,17 @@
+{% extends 'booking/control-panel/base.html' %}
+
+{% block title %}
+    Delete "{{ object.title }}"
+{% endblock %}
+
+{% block heading %}
+    <h2>Delete "{{ object.title }}"</h2>
+{% endblock %}
+
+{% block content %}
+    <form action="{{ object.get_delete_url }}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Delete</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,28 @@
+<h2>Tables</h2>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>Title</th>
+            <th>Status</th>
+            <th>Restaurant</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for table in object_tables_list %}
+                <tr>
+                    <td>{{ table.pk }}</td>
+                    <td>{{ table.title }}</td>
+                    <td>{{ table.get_status_display }}</td>
+                    <td>{{ table.restaurant }}</td>
+                    <td class="edit">
+                        <a href="{{ table.get_update_url }}"><i class="fas fa-edit"></i></a>
+                        <a href="{{ table.get_delete_url }}"><i class="far fa-trash-alt"></i></a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

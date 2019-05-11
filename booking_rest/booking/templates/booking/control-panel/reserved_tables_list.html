@@ -1,0 +1,19 @@
+{% extends 'booking/control-panel/base.html' %}
+
+{% block title %}
+    Reserved Tables
+{% endblock %}
+
+{% block heading %}
+    Reserved Tables
+{% endblock %}
+
+{% block content %}
+    {% include 'booking/control-panel/includes/reserved_list_template.html' %}
+{% endblock %}
+
+{% block menu_reserved %}
+    {% for menu_restaurant in menu_reserved %}
+    <li><a href="{{ menu_restaurant.get_reserved_url }}"><i class="far fa-list-alt"></i>{{ menu_restaurant.title }}</a></li>
+    {% endfor %}
+{% endblock %}

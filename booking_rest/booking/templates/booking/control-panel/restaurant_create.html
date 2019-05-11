@@ -1,0 +1,21 @@
+{% extends 'booking/control-panel/base.html' %}
+
+{% block title %}
+    Restaurant Create
+{% endblock %}
+
+{% block heading %}
+    <h2>Restaurant Create</h2>
+{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-body">
+            <form action="{% url 'restaurant_create_url' %}" method="post" enctype='multipart/form-data'>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Create Restaurant</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
